@@ -35,5 +35,5 @@ journal.add_grade("Alice", 5)
 journal.add_grade("Alice", 4)
 journal.add_grade("Bob", 3)
 
-print(journal.get_average_grade("Alice"))  # Выведет 4.5
-print(journal.get_average_grade("Bob"))  # Выведет 3.0
+print(journal.get_average_grade("Alice"))  # Izvedīs 4.5
+print(journal.get_average_grade("Bob"))  # Izvedīs 3.0
