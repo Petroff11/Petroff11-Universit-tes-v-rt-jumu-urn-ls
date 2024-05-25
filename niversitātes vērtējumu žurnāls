@@ -1,0 +1,39 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grades = []
+
+    def add_grade(self, grade):
+        self.grades.append(grade)
+
+    def average_grade(self):
+        return sum(self.grades) / len(self.grades) if len(self.grades) > 0 else 0
+
+class UniversityJournal:
+    def __init__(self):
+        self.students = {}
+
+    def add_student(self, name):
+        self.students[name] = Student(name)
+
+    def add_grade(self, name, grade):
+        if name in self.students:
+            self.students[name].add_grade(grade)
+
+    def get_average_grade(self, name):
+        if name in self.students:
+            return self.students[name].average_grade()
+        else:
+            return 0
+
+# Izmantošanas piemērs
+journal = UniversityJournal()
+journal.add_student("Alice")
+journal.add_student("Bob")
+
+journal.add_grade("Alice", 5)
+journal.add_grade("Alice", 4)
+journal.add_grade("Bob", 3)
+
+print(journal.get_average_grade("Alice"))  # Выведет 4.5
+print(journal.get_average_grade("Bob"))  # Выведет 3.0
